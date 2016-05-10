@@ -34,12 +34,10 @@
             _interacting = YES;
             [self.presentedVC dismissViewControllerAnimated:YES completion:nil];
             break;
-            break;
         case UIGestureRecognizerStateChanged: {
             CGFloat percent = MAX(translation.y / 400.0, 0);
             percent = MIN(percent, 1);
             self.shouldComplete = percent > 0.5;
-            NSLog(@"translation:%@", NSStringFromCGPoint(translation));
             
             [self updateInteractiveTransition:percent];
         }
