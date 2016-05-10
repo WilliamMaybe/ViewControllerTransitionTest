@@ -297,3 +297,5 @@ NS_CLASS_AVAILABLE_IOS(7_0) @interface UIPercentDrivenInteractiveTransition : NS
 ```
 
 ###总的来说，东西不难，少了颗钻研的心，多了对未知的恐惧😱😱😱
+
+[ColinEberhardt的VCTransitionsLibrary](https://github.com/ColinEberhardt/VCTransitionsLibrary) 给我们提供了很多丰富精彩的动画特效
