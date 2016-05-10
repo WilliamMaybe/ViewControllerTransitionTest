@@ -11,7 +11,7 @@
 @implementation RotationDismissAnimation
 
 - (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext {
-    return 1.0;
+    return 0.4;
 }
 
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext {
@@ -25,19 +25,25 @@
     [containerView addSubview:toVC.view];
     [containerView sendSubviewToBack:toVC.view];
     
-    [UIView animateWithDuration:[self transitionDuration:transitionContext]
-                          delay:0.0
-         usingSpringWithDamping:0.4
-          initialSpringVelocity:0.0
-                        options:UIViewAnimationOptionCurveLinear animations:^
-    {
+    [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
         fromVC.view.frame = finalFrame;
-                            
-    }
-                     completion:^(BOOL finished)
-    {
+    } completion:^(BOOL finished) {
         [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
     }];
+    
+//    [UIView animateWithDuration:[self transitionDuration:transitionContext]
+//                          delay:0.0
+//         usingSpringWithDamping:0.4
+//          initialSpringVelocity:0.0
+//                        options:UIViewAnimationOptionCurveLinear animations:^
+//    {
+//        fromVC.view.frame = finalFrame;
+//                            
+//    }
+//                     completion:^(BOOL finished)
+//    {
+//        [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
+//    }];
 }
 
 @end
